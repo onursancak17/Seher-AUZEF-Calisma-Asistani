@@ -1,0 +1,8 @@
+__pycache__/
+.runtime/
+.local/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.streamlit/secrets.toml
+.env
