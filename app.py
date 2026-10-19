@@ -31,11 +31,19 @@ if not (RUNTIME / 'app.py').is_file() or not STAMP.is_file() or STAMP.read_text(
         bundle.extractall(RUNTIME)
     STAMP.write_text(current_stamp, encoding='utf-8')
 
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(RUNTIME))
 os.chdir(RUNTIME)
 # Import the existing app without executing its main() yet, so we can safely
 # override just show_pdf(), leaving all test logic and authentication as-is.
-app = runpy.run_path(str(RUNTIME / 'app.py'), run_name='seher_pdf_ui_v3')
+# The bundle is executed without its original main() so all tests/history remain
+# untouched, while layout becomes wide as in Universal Emisyon Saha Asistanı Pro.
+bundle_source = (RUNTIME / 'app.py').read_text(encoding='utf-8')
+bundle_source = bundle_source.replace("layout='centered',initial_sidebar_state='collapsed'",
+                                      "layout='wide',initial_sidebar_state='expanded'")
+bundle_globals = {'__name__': 'seher_embedded', '__file__': str(RUNTIME / 'app.py')}
+exec(compile(bundle_source, str(RUNTIME / 'app.py'), 'exec'), bundle_globals)
+app = bundle_globals
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -182,5 +190,5 @@ def show_mobile_pdf():
 
 # The original show_pdf function retains the old working interface and is only
 # called if the user expands the fallback. All unrelated original functions stay.
-app['show_pdf'].__globals__['show_pdf'] = show_mobile_pdf
-app['main']()
+from seher_ui import render
+render(app, _PDF_READER_HTML)
