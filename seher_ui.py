@@ -3,12 +3,43 @@ All quizzes, question data, passwords and exam history use the original app.
 """
 import base64
 import hmac
+import secrets
 from pathlib import Path
 
 import fitz
 import streamlit as st
 import streamlit.components.v1 as components
 from pdf_notes import build_note_pdf
+from remembered_login import issue_token, valid_token, password_tag
+
+_device_store = components.declare_component(
+    'seher_remembered_device', path=str(Path(__file__).resolve().parent / 'device_login')
+)
+
+
+def device_command(action, token=''):
+    st.session_state['_device_command'] = {
+        'action': action, 'token': token, 'revision': secrets.token_hex(16),
+    }
+
+
+def sync_device():
+    if '_device_command' not in st.session_state:
+        device_command('read')
+    command = st.session_state['_device_command']
+    result = _device_store(command=command, key='remembered_device', default=None)
+    # Wait for the browser to acknowledge this specific read/write. An old
+    # component value must never restore a login during logout or token changes.
+    if not isinstance(result, dict) or result.get('revision') != command['revision']:
+        st.caption('Cihaz giriş kaydı kontrol ediliyor…')
+        st.stop()
+    return result
+
+
+def logout():
+    st.session_state.clear()
+    device_command('clear')
+    st.rerun()
 
 NAV = ['🏠 Ana Sayfa','📖 Notlar','✍️ Test','📊 Başarı Analizi','🕘 Sınav Geçmişi','⚙️ Ayarlar','ℹ️ Hakkında']
 LABEL = {
@@ -61,16 +92,33 @@ def login(app):
     if not pwd:
         st.error('APP_PASSWORD şifresi tanımlı değil. Streamlit Cloud → Settings → Secrets alanından eklenmelidir.')
         st.stop()
-    if st.session_state.get('authenticated'):
+    device = sync_device()
+    tag = password_tag(pwd)
+    if valid_token(device.get('token'), pwd):
+        st.session_state['authenticated'] = True
+        st.session_state['_auth_password_tag'] = tag
         return
+    if (st.session_state.get('authenticated') and
+            st.session_state.get('_auth_password_tag', tag) == tag):
+        # Also remember already-open sessions after this update.
+        st.session_state['_auth_password_tag'] = tag
+        if not device.get('error'):
+            device_command('save', issue_token(pwd))
+            st.rerun()
+        st.caption('Tarayıcı cihaz kaydına izin vermiyor; bu oturum açık kalacak.')
+        return
+    st.session_state.pop('authenticated', None)
     hero()
     st.markdown('### 🔐 Giriş Yap')
+    st.caption('Şifreyi bir kez girmen yeterli. Bu tarayıcıdaki sonraki girişlerin otomatik açılır.')
     with st.form('seher_pro_login'):
         entered = st.text_input('Çalışma alanı şifresi',type='password')
         go = st.form_submit_button('Giriş Yap',type='primary',use_container_width=True)
     if go:
         if hmac.compare_digest(entered.encode('utf-8'),str(pwd).encode('utf-8')):
             st.session_state['authenticated']=True
+            st.session_state['_auth_password_tag'] = tag
+            device_command('save', issue_token(pwd))
             st.rerun()
         else:
             st.error('Şifre eşleşmedi.')
@@ -256,8 +304,7 @@ def render(app,reader_template):
         st.divider()
         st.caption('🔒 Oturum açık')
         if st.button('🚪 Çıkış Yap',use_container_width=True,key='seher_pro_logout'):
-            st.session_state.clear()
-            st.rerun()
+            logout()
     hero()
     current=st.session_state['nav']
     # Recreate the quick selector from authoritative navigation each rerun.

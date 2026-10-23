@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Cihaz giriş kaydı</title></head>
+<body style="margin:0"><script>
+(() => {
+  const storageKey = 'seher_auzef_remembered_login_v1';
+  let lastRevision = null;
+  const send = (type, fields = {}) => window.parent.postMessage({isStreamlitMessage:true, type, ...fields}, '*');
+  window.addEventListener('message', event => {
+    if (event.source !== window.parent || event.data?.type !== 'streamlit:render') return;
+    const command = event.data.args.command;
+    if (!command || command.revision === lastRevision) return;
+    lastRevision = command.revision;
+    let token = '', error = false;
+    try {
+      if (command.action === 'save') localStorage.setItem(storageKey, command.token);
+      if (command.action === 'clear') localStorage.removeItem(storageKey);
+      token = localStorage.getItem(storageKey) || '';
+    } catch (_) { error = true; }
+    send('streamlit:setComponentValue', {
+      dataType:'json', value:{revision:command.revision, token, error}
+    });
+    send('streamlit:setFrameHeight', {height:0});
+  });
+  send('streamlit:componentReady', {apiVersion:1});
+  send('streamlit:setFrameHeight', {height:0});
+})();
+</script></body></html>
