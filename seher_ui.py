@@ -23,7 +23,7 @@ def device_command(action, token=''):
     }
 
 
-def sync_device():
+def sync_device(bootstrap_token=''):
     if '_device_command' not in st.session_state:
         device_command('read')
     command = st.session_state['_device_command']
@@ -31,6 +31,11 @@ def sync_device():
     # Wait for the browser to acknowledge this specific read/write. An old
     # component value must never restore a login during logout or token changes.
     if not isinstance(result, dict) or result.get('revision') != command['revision']:
+        # Cookies arrive with the new page/WebSocket request, so a refresh can
+        # restore access before the iframe finishes its asynchronous handshake.
+        # Never use that request's stale cookies during save or logout.
+        if command['action'] == 'read' and bootstrap_token:
+            return {'token': bootstrap_token, 'error': False}
         st.caption('Cihaz giriş kaydı kontrol ediliyor…')
         st.stop()
     return result
@@ -92,11 +97,15 @@ def login(app):
     if not pwd:
         st.error('APP_PASSWORD şifresi tanımlı değil. Streamlit Cloud → Settings → Secrets alanından eklenmelidir.')
         st.stop()
-    device = sync_device()
+    request_cookie = getattr(getattr(st, 'context', None), 'cookies', {}).get('seher_auzef_device', '')
+    bootstrap = request_cookie if valid_token(request_cookie, pwd) else ''
+    device = sync_device(bootstrap_token=bootstrap)
     tag = password_tag(pwd)
     if valid_token(device.get('token'), pwd):
         st.session_state['authenticated'] = True
         st.session_state['_auth_password_tag'] = tag
+        if device.get('error'):
+            st.warning('Tarayıcı kalıcı giriş kaydına izin vermedi. Bu oturum açık; yenilemede yeniden şifre istenebilir.')
         return
     if (st.session_state.get('authenticated') and
             st.session_state.get('_auth_password_tag', tag) == tag):
@@ -105,7 +114,7 @@ def login(app):
         if not device.get('error'):
             device_command('save', issue_token(pwd))
             st.rerun()
-        st.caption('Tarayıcı cihaz kaydına izin vermiyor; bu oturum açık kalacak.')
+        st.warning('Tarayıcı kalıcı giriş kaydına izin vermedi. Bu oturum açık; yenilemede yeniden şifre istenebilir.')
         return
     st.session_state.pop('authenticated', None)
     hero()
@@ -198,45 +207,7 @@ def note_navigation(position):
                 on_click=navigate, args=(NAV[2],))
 
 
-_DRAWER_HTML = r'''<script>
-(() => {
-  const host = window.parent, doc = host.document;
-  if (host.__seherDrawer) host.__seherDrawer.abort();
-  const control = new host.AbortController();
-  host.__seherDrawer = control;
-  const options = {passive:true, signal:control.signal};
-  let start = null;
-  const sidebar = () => doc.querySelector('[data-testid="stSidebar"]');
-  function expanded() {
-    const side = sidebar();
-    if (!side) return false;
-    if (side.hasAttribute('aria-expanded')) return side.getAttribute('aria-expanded') === 'true';
-    const rect = side.getBoundingClientRect();
-    return rect.width > 0 && rect.left >= -1 && rect.right > 0;
-  }
-  doc.addEventListener('touchstart', e => {
-    start = null;
-    if (e.touches.length !== 1) return;
-    const t = e.touches[0], side = sidebar();
-    if ((!expanded() && t.clientX <= 40) ||
-        (expanded() && side && side.contains(e.target)))
-      start = {x:t.clientX, y:t.clientY, open:expanded()};
-  }, options);
-  doc.addEventListener('touchend', e => {
-    const first = start; start = null;
-    if (!first || !e.changedTouches.length || e.touches.length) return;
-    const t = e.changedTouches[0], dx = t.clientX-first.x, dy = t.clientY-first.y;
-    if (Math.abs(dx) < 65 || Math.abs(dx) < Math.abs(dy)*1.6) return;
-    if (first.open && dx < 0 && expanded()) {
-      const side = sidebar();
-      side?.querySelector('[data-testid="stSidebarCollapseButton"] button, button[data-testid="stSidebarCollapseButton"]')?.click();
-    } else if (!first.open && dx > 0 && !expanded()) {
-      doc.querySelector('[data-testid="stSidebarCollapsedControl"] button, button[data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] button')?.click();
-    }
-  }, options);
-  doc.addEventListener('touchcancel', () => {start = null;}, options);
-})();
-</script>'''
+_DRAWER_HTML = '<script>' + (Path(__file__).resolve().parent / 'mobile_drawer.js').read_text(encoding='utf-8') + '</script>'
 
 
 def quick_navigation():
@@ -319,5 +290,5 @@ def render(app,reader_template):
     elif current==NAV[5]:settings()
     elif current==NAV[6]:about(app)
     st.divider()
-    st.caption('Seher AUZEF Pro · Özel çalışma materyali · Resmî sınav uygulaması değildir.')
+    st.caption('Seher AUZEF Pro · Sürüm 2026.10.23.2 · Özel çalışma materyali · Resmî sınav uygulaması değildir.')
 

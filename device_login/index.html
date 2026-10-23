@@ -3,7 +3,36 @@
 <body style="margin:0"><script>
 (() => {
   const storageKey = 'seher_auzef_remembered_login_v1';
+  const cookieName = 'seher_auzef_device';
   let lastRevision = null;
+  // Use the app's first-party context, rather than depending exclusively on
+  // storage access from a component iframe (restricted by some mobile browsers).
+  let host = window;
+  try { if (window.parent.document) host = window.parent; } catch (_) {}
+  function readCookie() {
+    try {
+      const item = host.document.cookie.split(';').map(s=>s.trim()).find(s=>s.startsWith(cookieName+'='));
+      return item ? decodeURIComponent(item.slice(cookieName.length+1)) : '';
+    } catch (_) { return ''; }
+  }
+  function writeCookie(token) {
+    const secure = host.location.protocol === 'https:' ? '; Secure' : '';
+    host.document.cookie = cookieName+'='+encodeURIComponent(token)+
+      '; Path=/; Max-Age='+(token ? 34560000 : 0)+'; SameSite=Lax'+secure;
+  }
+  function readStored() {
+    let token = readCookie();
+    try { token = token || host.localStorage.getItem(storageKey) || ''; } catch (_) {}
+    // Migrate credentials written by the previous iframe-only implementation.
+    try { token = token || window.localStorage.getItem(storageKey) || ''; } catch (_) {}
+    return token;
+  }
+  function saveStored(token) {
+    let saved = false;
+    try { host.localStorage.setItem(storageKey,token); saved = host.localStorage.getItem(storageKey) === token; } catch (_) {}
+    try { writeCookie(token); saved = readCookie() === token || saved; } catch (_) {}
+    return saved;
+  }
   const send = (type, fields = {}) => window.parent.postMessage({isStreamlitMessage:true, type, ...fields}, '*');
   window.addEventListener('message', event => {
     if (event.source !== window.parent || event.data?.type !== 'streamlit:render') return;
@@ -11,11 +40,16 @@
     if (!command || command.revision === lastRevision) return;
     lastRevision = command.revision;
     let token = '', error = false;
-    try {
-      if (command.action === 'save') localStorage.setItem(storageKey, command.token);
-      if (command.action === 'clear') localStorage.removeItem(storageKey);
-      token = localStorage.getItem(storageKey) || '';
-    } catch (_) { error = true; }
+    if (command.action === 'clear') {
+      try { host.localStorage.removeItem(storageKey); } catch (_) {}
+      try { window.localStorage.removeItem(storageKey); } catch (_) {}
+      try { writeCookie(''); } catch (_) {}
+      token = readStored();
+      error = Boolean(token);
+    } else {
+      token = command.action === 'save' ? command.token : readStored();
+      if (token) error = !saveStored(token);
+    }
     send('streamlit:setComponentValue', {
       dataType:'json', value:{revision:command.revision, token, error}
     });

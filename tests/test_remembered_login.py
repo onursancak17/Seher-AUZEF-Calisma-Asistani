@@ -19,6 +19,7 @@ class FakeStreamlit:
     def caption(self, *a): pass
     def markdown(self, *a): pass
     def error(self, text): self.errors.append(text)
+    def warning(self, text): self.errors.append(text)
     def stop(self): raise Stop()
     def rerun(self): raise Rerun()
     def form(self, *a): return self
@@ -95,6 +96,21 @@ class DeviceLoginTests(unittest.TestCase):
         with self.assertRaises(Stop):self.login()
         self.ack(error=True);self.login()
         self.assertTrue(self.st.session_state['authenticated'])
+    def test_cookie_restores_refresh_before_component_ready(self):
+        token=issue_token(self.password)
+        self.st.context=SimpleNamespace(cookies={'seher_auzef_device':token})
+        self.login()
+        self.assertTrue(self.st.session_state['authenticated'])
+        with self.assertRaises(Rerun):self.scope['logout']()
+        # Cookies on this WebSocket remain stale during browser deletion.
+        with self.assertRaises(Stop):self.login()
+        self.ack()
+        with self.assertRaises(Stop):self.login()
+        self.assertFalse(self.st.session_state.get('authenticated'))
+    def test_cookie_with_wrong_signature_cannot_bootstrap(self):
+        self.st.context=SimpleNamespace(cookies={'seher_auzef_device':issue_token('wrong-password')})
+        with self.assertRaises(Stop):self.login()
+        self.assertFalse(self.st.session_state.get('authenticated'))
     def test_independent_devices_and_token_integrity(self):
         a,b=issue_token(self.password),issue_token(self.password)
         self.assertNotEqual(a,b)
