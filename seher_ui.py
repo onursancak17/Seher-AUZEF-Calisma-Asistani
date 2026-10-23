@@ -110,6 +110,7 @@ def notes(app,reader_template):
     course=app['COURSE_BY_ID'][slug]
     st.subheader(f"{course['icon']} {course['name']} — Konu Anlatımı")
     st.caption('Test soruları ve cevap anahtarları PDF’den çıkarılmıştır. Ünite testleri Test Çöz bölümünde kalır.')
+    note_navigation('top')
     titles=app['unit_titles']()[slug]
     unit=st.selectbox(
         'Okuyacağın ünite',
@@ -132,6 +133,72 @@ def notes(app,reader_template):
     st.download_button('📥 Konu anlatımı PDF’sini telefona indir',data,
         file_name=f"Seher_{slug}_{'tum_notlar' if unit is None else 'unite_'+str(unit)}.pdf",
         mime='application/pdf',use_container_width=True)
+    note_navigation('bottom')
+
+
+def navigate(destination):
+    # Callback runs before the sidebar radio is created on the next rerun.
+    st.session_state['nav'] = destination
+
+
+def note_navigation(position):
+    home, test = st.columns(2)
+    home.button('← Ana Sayfa', key=f'notes_home_{position}',
+                use_container_width=True, on_click=navigate, args=(NAV[0],))
+    test.button('✍️ Bu Dersten Test Çöz', key=f'notes_test_{position}',
+                type='primary', use_container_width=True,
+                on_click=navigate, args=(NAV[2],))
+
+
+_DRAWER_HTML = r'''<script>
+(() => {
+  const host = window.parent, doc = host.document;
+  if (host.__seherDrawer) host.__seherDrawer.abort();
+  const control = new host.AbortController();
+  host.__seherDrawer = control;
+  const options = {passive:true, signal:control.signal};
+  let start = null;
+  const sidebar = () => doc.querySelector('[data-testid="stSidebar"]');
+  function expanded() {
+    const side = sidebar();
+    if (!side) return false;
+    if (side.hasAttribute('aria-expanded')) return side.getAttribute('aria-expanded') === 'true';
+    const rect = side.getBoundingClientRect();
+    return rect.width > 0 && rect.left >= -1 && rect.right > 0;
+  }
+  doc.addEventListener('touchstart', e => {
+    start = null;
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0], side = sidebar();
+    if ((!expanded() && t.clientX <= 40) ||
+        (expanded() && side && side.contains(e.target)))
+      start = {x:t.clientX, y:t.clientY, open:expanded()};
+  }, options);
+  doc.addEventListener('touchend', e => {
+    const first = start; start = null;
+    if (!first || !e.changedTouches.length || e.touches.length) return;
+    const t = e.changedTouches[0], dx = t.clientX-first.x, dy = t.clientY-first.y;
+    if (Math.abs(dx) < 65 || Math.abs(dx) < Math.abs(dy)*1.6) return;
+    if (first.open && dx < 0 && expanded()) {
+      const side = sidebar();
+      side?.querySelector('[data-testid="stSidebarCollapseButton"] button, button[data-testid="stSidebarCollapseButton"]')?.click();
+    } else if (!first.open && dx > 0 && !expanded()) {
+      doc.querySelector('[data-testid="stSidebarCollapsedControl"] button, button[data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] button')?.click();
+    }
+  }, options);
+  doc.addEventListener('touchcancel', () => {start = null;}, options);
+})();
+</script>'''
+
+
+def quick_navigation():
+    st.radio('Hızlı geçiş', NAV[:3], format_func=lambda name: LABEL[name],
+             index=NAV[:3].index(st.session_state['nav']) if st.session_state['nav'] in NAV[:3] else None,
+             horizontal=True, key='quick_nav', on_change=_quick_changed)
+
+
+def _quick_changed():
+    navigate(st.session_state['quick_nav'])
 
 def success(app):
     st.subheader('📊 Başarı Analizi')
@@ -193,6 +260,10 @@ def render(app,reader_template):
             st.rerun()
     hero()
     current=st.session_state['nav']
+    # Recreate the quick selector from authoritative navigation each rerun.
+    st.session_state['quick_nav'] = current if current in NAV[:3] else None
+    quick_navigation()
+    components.html(_DRAWER_HTML, height=0, scrolling=False)
     if current==NAV[0]:dashboard(app)
     elif current==NAV[1]:notes(app,reader_template)
     elif current==NAV[2]:app['show_quiz']()
@@ -202,3 +273,4 @@ def render(app,reader_template):
     elif current==NAV[6]:about(app)
     st.divider()
     st.caption('Seher AUZEF Pro · Özel çalışma materyali · Resmî sınav uygulaması değildir.')
+

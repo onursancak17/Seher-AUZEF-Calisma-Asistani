@@ -56,6 +56,8 @@ _PDF_READER_HTML = r'''<!doctype html>
   #toolbar {display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px 6px;background:#fff;border-bottom:1px solid #d8cdd9;flex-shrink:0}
   button{background:#f4ecf3;border:1px solid #cdbdcd;border-radius:9px;min-height:40px;padding:6px 10px;font-size:15px;color:#392539;font-weight:650;cursor:pointer;touch-action:manipulation}
   button.main{background:#865678;color:#fff;border-color:#865678}
+  #navigation{display:flex;gap:6px;padding:6px;background:#fff;border-bottom:1px solid #d8cdd9;flex-shrink:0}
+  #navigation button{flex:1;min-height:44px}
   button:disabled{opacity:.4;cursor:not-allowed}
   #page{font-size:13px;white-space:nowrap;min-width:67px;text-align:center}
   #percent{font-size:13px;white-space:nowrap;min-width:48px;text-align:center}
@@ -68,15 +70,19 @@ _PDF_READER_HTML = r'''<!doctype html>
   @media(max-width:480px){#toolbar{gap:4px;padding:6px 3px}button{font-size:14px;min-height:42px;padding:5px 8px}#page{min-width:61px}}
 </style></head><body>
 <div id="wrap">
+ <div id="navigation" role="navigation" aria-label="Çalışma alanına dön">
+  <button id="home">← Ana Sayfa</button>
+  <button id="test" class="main">✍️ Test Çöz</button>
+ </div>
  <div id="toolbar" role="toolbar" aria-label="PDF okuma araçları">
   <button id="full" class="main" title="Tam ekran aç veya kapat">⛶ Tam ekran</button>
-  <button id="prev" title="Önceki sayfa">‹</button><span id="page">1 / …</span>
-  <button id="next" title="Sonraki sayfa">›</button>
+  <button id="prev" title="Önceki sayfa">‹ Önceki</button><span id="page">1 / …</span>
+  <button id="next" title="Sonraki sayfa">Sonraki ›</button>
   <button id="out" title="Uzaklaştır">−</button><span id="percent">100%</span>
   <button id="in" title="Yakınlaştır">+</button><button id="fit" title="Sayfa genişliğine sığdır">Sığdır</button>
  </div>
- <div id="viewport"><div id="paper"><canvas id="canvas" title="Tam ekran okumak için dokun"></canvas></div></div>
- <div id="status">⛶ Tam ekrana bas · İki parmakla yakınlaştır · ‹ › sayfa değiştir</div>
+ <div id="viewport"><div id="paper"><canvas id="canvas"></canvas></div></div>
+ <div id="status">Tam ekran düğmesiyle büyüt · Ana Sayfa veya Test Çöz ile çık</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
@@ -117,7 +123,7 @@ async function render(){
    renderTask=pg.render({canvasContext:ctx,viewport:visual,transform:dpr!==1?[dpr,0,0,dpr,0,0]:undefined});
    await renderTask.promise;
    if(myVersion!==renderVersion)return;
-   refreshButtons();note('⛶ Tam ekran · İki parmakla yakınlaştır · ‹ › sayfa değiştir');
+   refreshButtons();note('Önceki / Sonraki: PDF sayfası · Ana Sayfa / Test Çöz: bölüm değiştir');
  }catch(e){if(e && e.name==='RenderingCancelledException')return;note('Sayfa görüntülenemedi: '+String(e.message||e));}
 }
 function go(delta){if(!pdf)return;const n=clamp(current+delta,1,pdf.numPages);if(n===current)return;current=n;viewport.scrollTop=0;viewport.scrollLeft=0;render();}
@@ -133,11 +139,23 @@ async function fullscreen(){
  setTimeout(render,150);
 }
 $('full').addEventListener('click',fullscreen);
+async function leaveReader(destination){
+ try{
+  const target=window.parent.document.querySelector('.st-key-notes_'+destination+'_top button');
+  if(!target){note('Okuyucunun üstündeki Ana Sayfa veya Test Çöz düğmesini kullan.');return;}
+  if(document.fullscreenElement && document.exitFullscreen)await document.exitFullscreen();
+  else if(document.webkitFullscreenElement && document.webkitExitFullscreen)document.webkitExitFullscreen();
+  target.click();
+  window.parent.scrollTo({top:0,behavior:'smooth'});
+ }catch(e){note('Tam ekranı kapatıp okuyucunun üstündeki geçiş düğmelerini kullan.');}
+}
+$('home').addEventListener('click',()=>leaveReader('home'));
+$('test').addEventListener('click',()=>leaveReader('test'));
 $('prev').addEventListener('click',()=>go(-1));$('next').addEventListener('click',()=>go(1));
 $('in').addEventListener('click',()=>changeZoom(zoom+.25));
 $('out').addEventListener('click',()=>changeZoom(zoom-.25));
 $('fit').addEventListener('click',()=>changeZoom(1));
-canvas.addEventListener('click',()=>{if(Date.now()-lastGesture>600)fullscreen();});
+// A normal reading tap must not unexpectedly hide the application navigation.
 viewport.addEventListener('touchstart',e=>{
  if(e.touches.length===2){initialPinch=fingerDistance(e.touches);pinchZoom=zoom;currentFactor=1;lastGesture=Date.now();}
 },{passive:true});
@@ -192,3 +210,4 @@ def show_mobile_pdf():
 # called if the user expands the fallback. All unrelated original functions stay.
 from seher_ui import render
 render(app, _PDF_READER_HTML)
+
