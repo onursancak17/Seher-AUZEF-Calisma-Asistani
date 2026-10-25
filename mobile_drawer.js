@@ -1,5 +1,84 @@
+// Keep the lock in the app window so Streamlit iframe reruns cannot orphan it.
+function seherScreenAwake(host) {
+  if (host.__seherScreenAwake) {
+    host.__seherScreenAwake.resume();
+    return host.__seherScreenAwake;
+  }
+  const doc = host.document;
+  let lock = null, pending = false, enabled = true;
+  let message = '☀️ Ekran açık tutma başlatılıyor…';
+  function status() {
+    const hero = doc.querySelector('.pro-hero');
+    if (!hero) return;
+    let label = hero.querySelector('[data-seher-awake]');
+    if (!label) {
+      label = doc.createElement('p');
+      label.setAttribute('data-seher-awake', '');
+      label.setAttribute('role', 'status');
+      label.style.cssText = 'margin-top:8px;font-size:.8rem';
+      hero.appendChild(label);
+    }
+    if (label.textContent !== message) label.textContent = message;
+  }
+  async function acquire() {
+    if (!enabled || doc.visibilityState !== 'visible' || pending || (lock && !lock.released)) return;
+    if (!host.navigator?.wakeLock?.request) {
+      message = 'Ekranı açık tutma bu tarayıcıda desteklenmiyor.';
+      status(); return;
+    }
+    pending = true;
+    try {
+      const sentinel = await host.navigator.wakeLock.request('screen');
+      if (!enabled || doc.visibilityState !== 'visible') {
+        await sentinel.release(); return;
+      }
+      lock = sentinel;
+      sentinel.addEventListener('release', () => {
+        if (lock !== sentinel) return;
+        lock = null;
+        message = 'Ekran açık tutma durakladı; devam etmek için ekrana dokun.';
+        status();
+      }, {once:true});
+      message = '☀️ Çalışırken ekran açık tutuluyor';
+    } catch (_) {
+      message = 'Ekran açık tutulamadı. Ekrana dokun; sürerse tarayıcı/pil tasarrufu ayarlarını kontrol et.';
+    } finally { pending = false; status(); }
+  }
+  function pause() {
+    const held = lock;
+    lock = null;
+    if (held) held.release().catch(() => {});
+  }
+  const bound = new WeakSet();
+  const api = {
+    resume() { enabled = true; acquire(); status(); },
+    bind(targetDoc) {
+      if (!targetDoc || bound.has(targetDoc)) return;
+      bound.add(targetDoc);
+      targetDoc.addEventListener('pointerdown', () => acquire(), {passive:true});
+      targetDoc.addEventListener('touchend', () => acquire(), {passive:true});
+      targetDoc.addEventListener('keydown', () => acquire());
+    },
+    status
+  };
+  doc.addEventListener('visibilitychange', () => {
+    if (doc.visibilityState === 'visible') acquire(); else pause();
+  });
+  host.addEventListener('pagehide', pause);
+  host.addEventListener('pageshow', () => acquire());
+  doc.addEventListener('click', event => {
+    if (event.target.closest?.('.st-key-seher_pro_logout')) {
+      enabled = false; pause();
+    }
+  }, true);
+  host.__seherScreenAwake = api;
+  api.resume();
+  return api;
+}
+
 (() => {
   const host = window.parent, doc = host.document;
+  const awake = seherScreenAwake(host);
   if (host.__seherDrawer) host.__seherDrawer.abort();
   const control = new host.AbortController();
   host.__seherDrawer = control;
@@ -29,6 +108,7 @@
   function bind(targetDoc, frame=null) {
     if (!targetDoc || bound.has(targetDoc)) return;
     bound.add(targetDoc);
+    awake.bind(targetDoc);
     let start = null;
     const point = t => ({x:t.clientX+(frame?.getBoundingClientRect().left||0),y:t.clientY+(frame?.getBoundingClientRect().top||0)});
     function begin(e) {
@@ -66,6 +146,7 @@
   }
   const frames = new WeakSet();
   function scan() {
+    awake.status();
     for (const frame of doc.querySelectorAll('iframe')) {
       const attach = () => {try{bind(frame.contentDocument,frame);}catch(_){}};
       if (!frames.has(frame)) {
