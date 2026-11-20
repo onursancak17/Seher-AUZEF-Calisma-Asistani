@@ -1,6 +1,4 @@
-"""Modern Emisyon Pro-inspired sidebar for Seher AUZEF.
-All quizzes, question data, passwords and exam history use the original app.
-"""
+"""Navigation and mobile study views for Seher AUZEF."""
 import base64
 import hmac
 import secrets
@@ -10,6 +8,7 @@ import fitz
 import streamlit as st
 import streamlit.components.v1 as components
 from pdf_notes import build_note_pdf
+from final_quiz import show_final_quiz
 from remembered_login import issue_token, valid_token, password_tag
 
 _device_store = components.declare_component(
@@ -46,11 +45,13 @@ def logout():
     device_command('clear')
     st.rerun()
 
-NAV = ['🏠 Ana Sayfa','📖 Notlar','✍️ Test','📊 Başarı Analizi','🕘 Sınav Geçmişi','⚙️ Ayarlar','ℹ️ Hakkında']
+FINAL_PAGE = '🗂️ Geçmiş Final Soruları'
+NAV = ['🏠 Ana Sayfa','📖 Notlar','✍️ Test',FINAL_PAGE,'📊 Başarı Analizi','🕘 Sınav Geçmişi','⚙️ Ayarlar','ℹ️ Hakkında']
 LABEL = {
     '🏠 Ana Sayfa':'🏠 Ana Sayfa',
     '📖 Notlar':'📖 Dersler ve Konu Anlatımları',
     '✍️ Test':'✍️ Test Çöz',
+    FINAL_PAGE:FINAL_PAGE,
     '📊 Başarı Analizi':'📊 Başarı Analizi',
     '🕘 Sınav Geçmişi':'🕘 Sınav Geçmişi',
     '⚙️ Ayarlar':'⚙️ Ayarlar',
@@ -211,8 +212,8 @@ _DRAWER_HTML = '<script>' + (Path(__file__).resolve().parent / 'mobile_drawer.js
 
 
 def quick_navigation():
-    st.radio('Hızlı geçiş', NAV[:3], format_func=lambda name: LABEL[name],
-             index=NAV[:3].index(st.session_state['nav']) if st.session_state['nav'] in NAV[:3] else None,
+    st.radio('Hızlı geçiş', NAV[:4], format_func=lambda name: LABEL[name],
+             index=None,
              horizontal=True, key='quick_nav', on_change=_quick_changed)
 
 
@@ -279,16 +280,17 @@ def render(app,reader_template):
     hero()
     current=st.session_state['nav']
     # Recreate the quick selector from authoritative navigation each rerun.
-    st.session_state['quick_nav'] = current if current in NAV[:3] else None
+    st.session_state['quick_nav'] = current if current in NAV[:4] else None
     quick_navigation()
     components.html(_DRAWER_HTML, height=0, scrolling=False)
     if current==NAV[0]:dashboard(app)
     elif current==NAV[1]:notes(app,reader_template)
     elif current==NAV[2]:app['show_quiz']()
-    elif current==NAV[3]:success(app)
-    elif current==NAV[4]:app['show_history']()
-    elif current==NAV[5]:settings()
-    elif current==NAV[6]:about(app)
+    elif current==FINAL_PAGE:show_final_quiz(app)
+    elif current==NAV[4]:success(app)
+    elif current==NAV[5]:app['show_history']()
+    elif current==NAV[6]:settings()
+    elif current==NAV[7]:about(app)
     st.divider()
     st.caption('Seher AUZEF Pro · Sürüm 2026.10.23.2 · Özel çalışma materyali · Resmî sınav uygulaması değildir.')
 

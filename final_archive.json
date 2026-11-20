@@ -1,0 +1,1131 @@
+{
+  "anatomi": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/anatomi/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-0A5EC195D58D2D32179529CF10DC61B9/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-185725B4099B376885495DB43F0BA1A3/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-2885B02B93AE738B61D54D8E36CE735F/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-029404CAD1C15DFDE1AB17264B1E9856/"
+        }
+      ],
+      "2021-2022": [
+        {
+          "questions": 23,
+          "url": "https://sorusepetim.com/sinav/SE-0E97198BFE6637C67706A5F2D525333B/"
+        }
+      ],
+      "Tarihsiz": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-FFFAF0196F1251778460F225E478BB7F/"
+        },
+        {
+          "questions": 18,
+          "url": "https://sorusepetim.com/sinav/SE-461BD802F18C2D67CFF5F32EB5313430/"
+        }
+      ]
+    },
+    "sources": {
+      "2018-2019": "https://aofpusula.com/cikmis-sorular/auzef/anatomi",
+      "2020-2021": "https://aofpusula.com/cikmis-sorular/auzef/anatomi",
+      "2025-2026": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2025-2026-final",
+      "2024-2025": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2024-2025-final",
+      "2023-2024": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2023-2024-final",
+      "2022-2023": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2022-2023-final",
+      "2021-2022": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2021-2022-final"
+    },
+    "questions": [
+      {
+        "id": "final_anatomi_01",
+        "year": "2025-2026",
+        "question": "Üreterler böbreklerden gelen idrarı boşaltım öncesinde hangi yapıya ulaştırır?",
+        "options": {
+          "A": "Üretra",
+          "B": "Mesane",
+          "C": "Böbrek korteksi",
+          "D": "Glomerül",
+          "E": "Böbrek kapsülü"
+        },
+        "answer": "B",
+        "explanation": "Üreterler idrarı böbrek pelvisinden mesaneye iletir. Mesane idrarı depolar, üretra ise idrarın vücut dışına çıkmasını sağlar.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_anatomi_02",
+        "year": "2025-2026",
+        "question": "Bel hizasında alınan yatay bir anatomik kesit vücudu üst ve alt parçalara ayırır. Bu kesit hangi düzlemdedir?",
+        "options": {
+          "A": "Median",
+          "B": "Frontal",
+          "C": "Parasagittal",
+          "D": "Transvers",
+          "E": "Sagittal"
+        },
+        "answer": "D",
+        "explanation": "Transvers düzlem üst ve alt kısımları ayırır. Frontal düzlem ön ve arkayı, sagittal düzlem ise sağ ve solu ayırır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_anatomi_03",
+        "year": "2025-2026",
+        "question": "Sol kulakçıktan sol karıncığa geçen kan hangi kapaktan geçer?",
+        "options": {
+          "A": "Mitral kapak",
+          "B": "Triküspit kapak",
+          "C": "Pulmoner kapak",
+          "D": "Aort kapağı",
+          "E": "Alt ana toplardamar"
+        },
+        "answer": "A",
+        "explanation": "Mitral kapak sol atriyum ile sol ventrikül arasındadır. Triküspit kapak sağ tarafta aynı işlevi görür.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_anatomi_04",
+        "year": "2024-2025",
+        "question": "Safra kesesinden çıkan safra ortak safra kanalı aracılığıyla sindirim kanalının hangi bölümüne ulaşır?",
+        "options": {
+          "A": "Mide",
+          "B": "Jejunum",
+          "C": "Duodenum",
+          "D": "İleum",
+          "E": "Çekum"
+        },
+        "answer": "C",
+        "explanation": "Koledok, safrayı duodenuma, yani onikiparmak bağırsağına taşır. Bu noktada safra, yağların sindirimine yardımcı olur.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_anatomi_05",
+        "year": "2023-2024",
+        "question": "Ani bir tehlike karşısında kalp atımının hızlanmasında otonom sinir sisteminin hangi bölümü öncelikle rol alır?",
+        "options": {
+          "A": "Parasempatik sistem",
+          "B": "Somatik duyu sistemi",
+          "C": "Enterik sistem",
+          "D": "Motor korteks",
+          "E": "Sempatik sistem"
+        },
+        "answer": "E",
+        "explanation": "Sempatik etkinlik vücudu hızlı tepkiye hazırlar ve kalp hızını artırabilir. Parasempatik etkinlik dinlenme hâlinde kalp hızını yavaşlatabilir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_anatomi_06",
+        "year": "2022-2023",
+        "question": "Böbrekte kanın süzülmesi ve süzüntünün işlenmesi için özelleşmiş işlevsel birim hangisidir?",
+        "options": {
+          "A": "Üreter",
+          "B": "Nefron",
+          "C": "Mesane boynu",
+          "D": "Böbrek kaliksi",
+          "E": "Renal pelvis"
+        },
+        "answer": "B",
+        "explanation": "Nefron, renal cisimcik ve tübül bölümlerinden oluşur. Süzülme glomerülde başlar, tübüller geri emilim ve salgılama yoluyla süzüntünün içeriğini değiştirir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2022-2023-final"
+      },
+      {
+        "id": "final_anatomi_07",
+        "year": "2021-2022",
+        "question": "Kalp ve sindirim organlarına parasempatik lifler taşıyan X. kranyal sinir hangisidir?",
+        "options": {
+          "A": "N. facialis",
+          "B": "N. opticus",
+          "C": "N. hypoglossus",
+          "D": "N. vagus",
+          "E": "N. trigeminus"
+        },
+        "answer": "D",
+        "explanation": "Vagus onuncu kranyal sinirdir ve göğüs ile karın organlarının önemli bir bölümüne parasempatik lifler taşır. Hipoglossus ise dil kaslarının çoğunu uyarır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/anatomi/sinav/2021-2022-final"
+      }
+    ]
+  },
+  "psikoloji": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/psikoloji/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-05D2C36A101C68C54419CC2E819DDFB7/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-E624D6CBF7E246BEDF1893BFE008284C/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-682E0ED4A7C33E95F9C11EB0C6216251/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-09F44C27E928DFDC9E7F40210530E8C3/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-5A1045ED73EEA3793EDED06686FCD953/"
+        }
+      ],
+      "Tarihsiz": [
+        {
+          "questions": 15,
+          "url": "https://sorusepetim.com/sinav/SE-7F3D708627AAA2C08E5CDF59AA7671BC/"
+        },
+        {
+          "questions": 24,
+          "url": "https://sorusepetim.com/sinav/SE-2A18920041C00C7C2E7D1F6221E847BE/"
+        }
+      ]
+    },
+    "sources": {
+      "2024-2025": "https://www.mobildefter.com/auzef/ders/psikoloji/",
+      "2025-2026": "https://www.mobildefter.com/auzef/ders/psikoloji/",
+      "2023-2024": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2023-2024-final",
+      "2022-2023": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2022-2023-final",
+      "2021-2022": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2021-2022-final"
+    },
+    "questions": [
+      {
+        "id": "final_psikoloji_01",
+        "year": "2023-2024",
+        "question": "Bir kişinin işini maddi ödül beklemeden ve yaptığı işten tatmin olduğu için sürdürmesi, hangi güdülenmeye örnektir?",
+        "options": {
+          "A": "Dışsal güdülenme",
+          "B": "İçsel güdülenme",
+          "C": "Olumsuz ceza",
+          "D": "Duyusal uyum",
+          "E": "Refleks tepki"
+        },
+        "answer": "B",
+        "explanation": "İçsel güdülenmede davranış, etkinliğin kendi değeri veya verdiği tatmin nedeniyle sürer. Dışsal güdülenmede ödül gibi etkinlikten ayrı bir sonuç ağır basar.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_psikoloji_02",
+        "year": "2023-2024",
+        "question": "Bir fobiye yol açan uyaranın düşük düzeyden başlayarak gevşeme tepkisiyle eşleştirilmesi, hangi öğrenme ilkesini kullanır?",
+        "options": {
+          "A": "Örtük öğrenme",
+          "B": "Duyusal adaptasyon",
+          "C": "Sosyal karşılaştırma",
+          "D": "Kendiliğinden geri gelme",
+          "E": "Klasik koşullanmaya dayalı karşıt koşullama"
+        },
+        "answer": "E",
+        "explanation": "Sistematik duyarsızlaştırmada kaygı uyaranları kademeli olarak sunulur ve gevşemeyle eşleştirilir. Amaç korkuyla ilişkili tepkinin yerine gevşeme tepkisini öğrenmektir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_psikoloji_03",
+        "year": "2023-2024",
+        "question": "Bir sesin kişi tarafından denemelerin yaklaşık yarısında fark edildiği en düşük şiddet, hangi kavramı tanımlar?",
+        "options": {
+          "A": "Mutlak eşik",
+          "B": "Fark eşiği",
+          "C": "Algısal değişmezlik",
+          "D": "Şekil-zemin ilişkisi",
+          "E": "Duyusal bellek"
+        },
+        "answer": "A",
+        "explanation": "Mutlak eşik tek bir uyaranın algılanabildiği alt sınırı anlatır. Fark eşiği ise iki uyarıcı arasındaki farkın ayırt edilmesi için gereken en küçük değişimdir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_psikoloji_04",
+        "year": "2022-2023",
+        "question": "Öğrenci ödevini zamanında yaptığında rahatsız edici bir uyarı sesi kesiliyor ve zamanında ödev yapma davranışı artıyor. Bu süreç hangisidir?",
+        "options": {
+          "A": "Olumlu ceza",
+          "B": "Olumsuz ceza",
+          "C": "Olumsuz pekiştirme",
+          "D": "Olumlu pekiştirme",
+          "E": "Sönme"
+        },
+        "answer": "C",
+        "explanation": "Davranışın ardından itici uyaran kaldırıldığı ve davranış sıklaştığı için olumsuz pekiştirme söz konusudur. Ceza, davranışın sıklığını azaltır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2022-2023-final"
+      },
+      {
+        "id": "final_psikoloji_05",
+        "year": "2022-2023",
+        "question": "Bir kişinin açlık gidermeye yönelmesi Maslow’un sınıflamasında hangi ihtiyaç grubuna girer?",
+        "options": {
+          "A": "Saygınlık",
+          "B": "Kendini gerçekleştirme",
+          "C": "Ait olma",
+          "D": "Fizyolojik ihtiyaçlar",
+          "E": "Güvenlik"
+        },
+        "answer": "D",
+        "explanation": "Açlık ve susuzluk bedensel gereksinimlerdir. Maslow bunları temel fizyolojik ihtiyaçlar arasında ele alır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2022-2023-final"
+      },
+      {
+        "id": "final_psikoloji_06",
+        "year": "2021-2022",
+        "question": "Bir sınavda seçenekler gösterildiğinde doğru terimi seçmek, terimi hiçbir ipucu olmadan yazmaya kıyasla hangi bellek işlemini daha çok kullanır?",
+        "options": {
+          "A": "Tanıma",
+          "B": "Serbest hatırlama",
+          "C": "Kodlamayı durdurma",
+          "D": "Duyusal adaptasyon",
+          "E": "Çağrışımın sönmesi"
+        },
+        "answer": "A",
+        "explanation": "Tanıma, önceden karşılaşılan bilgiyi bir seçenek veya ipucu yardımıyla ayırt etmektir. Serbest hatırlamada bilgi seçenek verilmeden geri çağrılır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2021-2022-final"
+      },
+      {
+        "id": "final_psikoloji_07",
+        "year": "2021-2022",
+        "question": "Zekânın dilsel, uzamsal ve müziksel gibi farklı alanlarda incelenebileceğini savunan çoklu zekâ kuramı kime aittir?",
+        "options": {
+          "A": "Jean Piaget",
+          "B": "Ivan Pavlov",
+          "C": "Howard Gardner",
+          "D": "Edward Thorndike",
+          "E": "Abraham Maslow"
+        },
+        "answer": "C",
+        "explanation": "Howard Gardner, zekâyı çeşitli yetenek alanları üzerinden ele alır. Maslow güdülenme ve ihtiyaçları, Pavlov ise klasik koşullanmayı incelemiştir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/psikoloji/sinav/2021-2022-final"
+      }
+    ]
+  },
+  "bilimsel": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/bilimsel-arastirma-teknikleri/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-18C8499B2EEFAF2B95800D3CC97C0FDD/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-4B4E5DE5D0590F303E774776ED371974/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-7BC9B8EF95CE95964C93EFF1ACCDE383/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-3E3C81717450C25635E58132406F3E7D/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-A222BE7DC6BC62721C29D5D6B51D7336/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-F65563D4A869B677EF5C537F679AE70F/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-E93608D0A6070D237BAD89BE69DDE420/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-C06B3CC4C83848C37F1A66A91BA845AB/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-991406E4C4FC8367F7961489D690A1EB/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-D6D38F61CA8003C95835F381D8F5AA91/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-40E46C520482BB1B21B5D00EDD7C7291/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-149EED94A0F1AB906E15BA339176119B/"
+        }
+      ],
+      "Tarihsiz": [
+        {
+          "questions": 19,
+          "url": "https://sorusepetim.com/sinav/SE-081A7CAC0AD80372F9A690A90C38DA7B/"
+        },
+        {
+          "questions": 16,
+          "url": "https://sorusepetim.com/sinav/SE-C990493B000F36A07906314E87642ED3/"
+        }
+      ]
+    },
+    "sources": {
+      "2018-2019": "https://aofpusula.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri",
+      "2019-2020": "https://aofpusula.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri",
+      "2020-2021": "https://aofpusula.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri",
+      "2025-2026": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2025-2026-final",
+      "2024-2025": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2024-2025-final",
+      "2023-2024": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2023-2024-final",
+      "2022-2023": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2022-2023-final"
+    },
+    "questions": [
+      {
+        "id": "final_bilimsel_01",
+        "year": "2025-2026",
+        "question": "Araştırmacı uyku süresinin dikkat puanına etkisini inceliyor. Bu tasarımda dikkat puanı hangi değişkendir?",
+        "options": {
+          "A": "Bağımsız değişken",
+          "B": "Sabit parametre",
+          "C": "Bağımlı değişken",
+          "D": "Örnekleme birimi",
+          "E": "Araştırma hipotezi"
+        },
+        "answer": "C",
+        "explanation": "Dikkat puanı açıklanmak istenen sonuçtur ve bağımlı değişkendir. Uyku süresi, etkisi incelenen bağımsız değişkendir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_bilimsel_02",
+        "year": "2025-2026",
+        "question": "Bir ölçüm aracı benzer koşullarda tekrarlanan uygulamalarda tutarlı puanlar veriyor. Bu bulgu öncelikle hangi özelliği destekler?",
+        "options": {
+          "A": "Güvenirlik",
+          "B": "İçerik geçerliği",
+          "C": "Dış geçerlik",
+          "D": "Örneklem çeşitliliği",
+          "E": "Nedensellik"
+        },
+        "answer": "A",
+        "explanation": "Güvenirlik ölçümlerin tutarlılığıyla ilgilidir. Tutarlı bir araç ölçmek istenen özelliği yakalamayabileceğinden geçerlik ayrıca incelenir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_bilimsel_03",
+        "year": "2025-2026",
+        "question": "Araştırma özetinin okuyucuya en iyi hizmet etmesi için hangi bilgileri kısaca vermesi gerekir?",
+        "options": {
+          "A": "Yalnızca kaynakların tam listesini",
+          "B": "Sadece araştırmacının kişisel görüşünü",
+          "C": "Çalışmadaki tüm ham verileri",
+          "D": "Sadece sonraki araştırmalar için önerileri",
+          "E": "Amaç, yöntem, temel bulgular ve sonuç"
+        },
+        "answer": "E",
+        "explanation": "Özet, çalışmanın neden ve nasıl yapıldığını ve ne bulunduğunu kısa biçimde aktarır. Ham veri ve ayrıntılı kaynakça ana metinde veya eklerde verilir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_bilimsel_04",
+        "year": "2024-2025",
+        "question": "Bir okulun 40 öğretmeni üzerinde yapılan araştırmada 40 öğretmenin tamamından veri toplanıyor. Bu işlem nasıl adlandırılır?",
+        "options": {
+          "A": "Küme örneklemesi",
+          "B": "Tam sayım",
+          "C": "Amaçlı örnekleme",
+          "D": "Tabakalı örnekleme",
+          "E": "Sistematik örnekleme"
+        },
+        "answer": "B",
+        "explanation": "Tanımlanmış evrendeki her birimin incelenmesi tam sayımdır. Örneklemede evrenin yalnızca bir bölümü seçilir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_bilimsel_05",
+        "year": "2024-2025",
+        "question": "Öğrencilerin boy uzunluğu santimetre olarak ölçülüyor. Ölçüm tam sayıya yuvarlansa bile temel değişken hangi türdedir?",
+        "options": {
+          "A": "Nominal nitel veri",
+          "B": "Sıralı kategori",
+          "C": "Kesikli nicel veri",
+          "D": "Sürekli nicel veri",
+          "E": "İkili nitel veri"
+        },
+        "answer": "D",
+        "explanation": "Boy uzunluğu bir aralıkta ara değerler alabilen sürekli nicel veridir. Ölçüm cihazının veya kaydın yuvarlaması, değişkenin yapısını değiştirmez.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_bilimsel_06",
+        "year": "2023-2024",
+        "question": "Araştırmacı şehirdeki okullar arasından rastgele birkaç okul seçiyor ve seçilen okulların tüm öğrencilerini inceliyor. Hangi örnekleme kullanılmıştır?",
+        "options": {
+          "A": "Tek aşamalı küme örneklemesi",
+          "B": "Basit rastgele birey örneklemesi",
+          "C": "Sistematik birey örneklemesi",
+          "D": "Kota örneklemesi",
+          "E": "Kolayda örnekleme"
+        },
+        "answer": "A",
+        "explanation": "İlk seçim birimi öğrenci yerine doğal bir grup olan okuldur. Seçilen kümelerin tüm üyeleri incelendiğinden bu, tek aşamalı küme örneklemesidir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_bilimsel_07",
+        "year": "2022-2023",
+        "question": "Maddelerine bakıldığında bir anketin ölçmek istediği kavramla ilişkili görünmesi hangi geçerlik türünü ifade eder?",
+        "options": {
+          "A": "Yordama geçerliği",
+          "B": "Ölçüt geçerliği",
+          "C": "Yüz geçerliği",
+          "D": "Test-tekrar test güvenirliği",
+          "E": "İç tutarlılık"
+        },
+        "answer": "C",
+        "explanation": "Yüz geçerliği ölçme aracının ilk bakışta amaca uygun görünmesiyle ilgilidir. Bu izlenim, aracın geçerliği için tek başına yeterli kanıt sağlamaz.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/bilimsel-arastirma-teknikleri/sinav/2022-2023-final"
+      }
+    ]
+  },
+  "sosyoloji": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/sosyolojiye-giris/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 25,
+          "url": "https://sorusepetim.com/sinav/SE-E2966A5BAF033D5F8C1BBA6E84EC9EF9/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-803BE0AD4203BB7408C237C556D489EB/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-FA1AB1B4320795339F38A1728D5731BD/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-A8D1A6F2073288B033F0D740EA98EEA4/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-5719A80525737B98493643A8F9A00207/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-BE973D7093663A04D25314DD42484D2D/"
+        }
+      ],
+      "Tarihsiz": [
+        {
+          "questions": 18,
+          "url": "https://sorusepetim.com/sinav/SE-786153B9620840726AE42C6268BDFEBC/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-A30E412941E2F7B2F886518EB6F6047E/"
+        }
+      ]
+    },
+    "sources": {
+      "2025-2026": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2025-2026-final",
+      "2024-2025": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2024-2025-final",
+      "2023-2024": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2023-2024-final",
+      "2022-2023": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2022-2023-final"
+    },
+    "questions": [
+      {
+        "id": "final_sosyoloji_01",
+        "year": "2025-2026",
+        "question": "Bir toplumun yas tutma biçimini kendi tarihsel ve toplumsal bağlamında anlamaya çalışmak hangi tutumu örnekler?",
+        "options": {
+          "A": "Etnosantrizm",
+          "B": "Kültürel yayılma",
+          "C": "Toplumsal dışlanma",
+          "D": "Kültürel görecelilik",
+          "E": "Sınıf hareketliliği"
+        },
+        "answer": "D",
+        "explanation": "Kültürel görecelilik, bir uygulamayı ortaya çıktığı kültürün bağlamında anlamaya çalışmaktır. Etnosantrizm başka kültürleri kendi kültürünün ölçütleriyle değerlendirir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_sosyoloji_02",
+        "year": "2025-2026",
+        "question": "Marx’ın yaklaşımında kapitalist toplumdaki temel sınıf ayrımı için hangi ölçüt belirleyicidir?",
+        "options": {
+          "A": "Kişilerin doğum sırası",
+          "B": "Üretim araçlarıyla olan ilişkileri",
+          "C": "Dinlenen müzik türü",
+          "D": "Yerleşim yerinin iklimi",
+          "E": "Kişisel ilgi alanları"
+        },
+        "answer": "B",
+        "explanation": "Marx için sınıfsal konumu belirleyen temel ilişki, üretim araçlarının mülkiyeti ve emek gücüdür. İşçiler emek güçlerini satar, kapitalistler üretim araçlarına sahiptir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_sosyoloji_03",
+        "year": "2024-2025",
+        "question": "Bir kişinin iş bulmak amacıyla kendi isteğiyle başka bir bölgeye taşınması, karar verme biçimi bakımından nasıl adlandırılır?",
+        "options": {
+          "A": "Gönüllü göç",
+          "B": "Zorunlu göç",
+          "C": "Doğal nüfus artışı",
+          "D": "Toplumsal geri çekilme",
+          "E": "Kültürel gecikme"
+        },
+        "answer": "A",
+        "explanation": "Göç kararını kişi kendi isteğiyle verdiği için gönüllü göçten söz edilir. Zorunlu göçte savaş, afet veya zorlayıcı kararlar gibi etkenler belirleyicidir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_sosyoloji_04",
+        "year": "2024-2025",
+        "question": "Yaşlılıkta toplumsal ilişkileri ve rollerin sürdürülmesini yaşam doyumuyla ilişkilendiren görüş hangisidir?",
+        "options": {
+          "A": "Geri çekilme kuramı",
+          "B": "Anomi kuramı",
+          "C": "Çatışma kuramı",
+          "D": "Etiketleme kuramı",
+          "E": "Etkinlik kuramı"
+        },
+        "answer": "E",
+        "explanation": "Etkinlik kuramı, yaşlılıkta anlamlı uğraşların ve toplumsal rollerin sürdürülmesinin doyumu destekleyebileceğini savunur. Geri çekilme kuramı toplumsal katılımın azalmasına odaklanır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_sosyoloji_05",
+        "year": "2023-2024",
+        "question": "Bir kişinin davranışı bir toplulukta normal görülüp başka bir toplulukta sapma sayılıyor. Bu örnek sapmanın hangi özelliğine işaret eder?",
+        "options": {
+          "A": "Her yerde aynı olmasına",
+          "B": "Sadece biyolojiyle açıklanmasına",
+          "C": "Toplumsal bağlama göre değişmesine",
+          "D": "Yalnızca yasayla belirlenmesine",
+          "E": "Her zaman ağır suç sayılmasına"
+        },
+        "answer": "C",
+        "explanation": "Sapma, toplum veya grubun normlarıyla ilişkilidir. Normlar zaman ve bağlama göre değiştiğinden aynı davranış farklı biçimlerde değerlendirilebilir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_sosyoloji_06",
+        "year": "2023-2024",
+        "question": "Hızlı servis zincirlerindeki ölçülebilirlik ve standartlaşma ilkelerinin başka kurumlara yayılmasını Ritzer hangi kavramla açıklar?",
+        "options": {
+          "A": "Toplumsal sermaye",
+          "B": "McDonaldlaşma",
+          "C": "Dramaturji",
+          "D": "Kültürel gecikme",
+          "E": "Sınıf bilinci"
+        },
+        "answer": "B",
+        "explanation": "Ritzer’in McDonaldlaşma kavramı verimlilik, hesaplanabilirlik, öngörülebilirlik ve denetim ilkelerinin fast food dışında da yayılmasını anlatır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_sosyoloji_07",
+        "year": "2022-2023",
+        "question": "Uzun süreli, yüz yüze ve duygusal bağları güçlü ilişkiler Cooley’nin sınıflamasında hangi gruba örnektir?",
+        "options": {
+          "A": "İkincil grup",
+          "B": "Resmî örgüt",
+          "C": "İstatistiksel kategori",
+          "D": "Birincil grup",
+          "E": "Geçici kalabalık"
+        },
+        "answer": "D",
+        "explanation": "Birincil gruplar yakın ve kişisel ilişkilere dayanır. İkincil gruplarda ilişkiler ağırlıklı olarak belirli bir hedefe ve daha biçimsel rollere yöneliktir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/sosyolojiye-giris/sinav/2022-2023-final"
+      }
+    ]
+  },
+  "ingilizce": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/yabanci-dil-i/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 25,
+          "url": "https://sorusepetim.com/sinav/SE-7BF3EBF0DA0EB22CE8142A119CE9A784/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-298C7DCAE0F8C50B2C386DCB26E58042/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-78AC2945BAE62BB9137FB6D4ADBF3A12/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-E46458B7DA3DD310B1BE9D91784A9DE1/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-395D4BAFAD1285D13EA531BDB70CA70E/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-032AA601DE037DAD7688FD68677572E7/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 24,
+          "url": "https://sorusepetim.com/sinav/SE-2C52793AEA6BD90EB9462F9033537EF2/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-85576D37B261C160D021B3FE903390A3/"
+        }
+      ]
+    },
+    "sources": {
+      "2024": "https://auzefcampus.com.tr/yabanci-dil-i-final-2024/",
+      "2019-2020": "https://lolonolo.com/2020/01/14/ingilizce-1-final-2020-sorulari/",
+      "2020-2021": "https://lolonolo.com/2021/01/30/ingilizce-1-2021-final-sorulari/",
+      "2022-2023": "https://lolonolo.com/2022/12/28/ingilizce-1-2022-2023-final-sorulari/",
+      "2023-2024": "https://aofpusula.com/cikmis-sorular/auzef/yabancidil",
+      "2024-2025": "https://lolonolo.com/2024/12/31/ingilizce-1-2024-2025-final-sorulari/",
+      "2025-2026": "https://aofpusula.com/cikmis-sorular/auzef/yabancidil"
+    },
+    "questions": [
+      {
+        "id": "final_ingilizce_01",
+        "year": "2025-2026",
+        "question": "A: I'm at the library. Where are you? B: …. Konuşmayı hangi cevap tamamlar?",
+        "options": {
+          "A": "I'm at the bus stop.",
+          "B": "I am twenty years old.",
+          "C": "I like reading.",
+          "D": "I go there on Mondays.",
+          "E": "I'm a student."
+        },
+        "answer": "A",
+        "explanation": "Where are you? kişinin o anda nerede olduğunu sorar. I'm at the bus stop. bir yer belirttiği için uygun cevaptır.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/yabancidil"
+      },
+      {
+        "id": "final_ingilizce_02",
+        "year": "2025-2026",
+        "question": "A: Nice to meet you, Emma. B: …. İlk kez tanışan iki kişi için hangi cevap uygundur?",
+        "options": {
+          "A": "It's half past eight.",
+          "B": "I'm in the kitchen.",
+          "C": "Yes, I can drive.",
+          "D": "Nice to meet you, too.",
+          "E": "See you on Monday."
+        },
+        "answer": "D",
+        "explanation": "Nice to meet you. tanışma sırasında kullanılır. Aynı dilek too ile karşılanır. Diğer seçenekler saat, konum, yetenek veya vedalaşma bildirir.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/yabancidil"
+      },
+      {
+        "id": "final_ingilizce_03",
+        "year": "2024-2025",
+        "question": "A: … you swim? B: Yes, I can. Boşluğu hangi sözcük tamamlar?",
+        "options": {
+          "A": "Are",
+          "B": "Does",
+          "C": "Can",
+          "D": "Did",
+          "E": "Have"
+        },
+        "answer": "C",
+        "explanation": "Yetenek sorusunda can öznenin önüne gelir ve ardından fiilin yalın biçimi kullanılır. Kısa cevap Yes, I can. da can sorusunu destekler.",
+        "source": "https://lolonolo.com/2024/12/31/ingilizce-1-2024-2025-final-sorulari/"
+      },
+      {
+        "id": "final_ingilizce_04",
+        "year": "2024-2025",
+        "question": "Of the four routes, this one is the … to the airport. Cümlede “en kısa” anlamını hangi sözcük verir?",
+        "options": {
+          "A": "short",
+          "B": "shorter",
+          "C": "more short",
+          "D": "most short",
+          "E": "shortest"
+        },
+        "answer": "E",
+        "explanation": "Short kısa bir sıfattır. İki şeyi karşılaştırırken shorter, bir grup içinde en kısa olanı belirtirken the shortest kullanılır.",
+        "source": "https://lolonolo.com/2024/12/31/ingilizce-1-2024-2025-final-sorulari/"
+      },
+      {
+        "id": "final_ingilizce_05",
+        "year": "2023-2024",
+        "question": "The teacher says, “… carefully. These instructions are important.” Boşluğu hangi emir cümlesi tamamlar?",
+        "options": {
+          "A": "Look away",
+          "B": "Listen",
+          "C": "Leave",
+          "D": "Whisper",
+          "E": "Stop taking notes"
+        },
+        "answer": "B",
+        "explanation": "Listen carefully, “dikkatle dinleyin” demektir. Öğretmen önemli yönergeleri ilettiği için bağlama uygun eylem dinlemektir.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/yabancidil"
+      },
+      {
+        "id": "final_ingilizce_06",
+        "year": "2022-2023",
+        "question": "How many … are there in your class? Boşluğa hangi sözcük gelir?",
+        "options": {
+          "A": "students",
+          "B": "student",
+          "C": "furniture",
+          "D": "water",
+          "E": "information"
+        },
+        "answer": "A",
+        "explanation": "How many, sayılabilen isimlerin çoğuluyla kullanılır. Students çoğuldur. Water ve information gibi sayılamayan isimlerle how much kullanılır.",
+        "source": "https://lolonolo.com/2022/12/28/ingilizce-1-2022-2023-final-sorulari/"
+      },
+      {
+        "id": "final_ingilizce_07",
+        "year": "2022-2023",
+        "question": "Nora hates … up early on Sundays. Boşluğa hangi biçim gelir?",
+        "options": {
+          "A": "get",
+          "B": "gets",
+          "C": "getting",
+          "D": "got",
+          "E": "getted"
+        },
+        "answer": "C",
+        "explanation": "Hate fiilinden sonra bir eylemin adını vermek için -ing biçimi kullanılabilir. Get up fiilinin bu biçimi getting up olur.",
+        "source": "https://lolonolo.com/2022/12/28/ingilizce-1-2022-2023-final-sorulari/"
+      }
+    ]
+  },
+  "turk_dili": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/turk-dili-i/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 25,
+          "url": "https://sorusepetim.com/sinav/SE-A94A1531430216CC11A56CB8282CA2CA/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-EADC26C26CE06AC5C63E307C1AC39347/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-A7A8A62447987A032E14A6501DBEB265/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-912ECD0B7D41812ED35DA13549F67EA8/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-3D60D86C80191D8830EA9B0C6969E0A8/"
+        },
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-E97524DCBE9470BA98DD9576A9539964/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 19,
+          "url": "https://sorusepetim.com/sinav/SE-7D479A3FD4D370B77348C44BC726CF4E/"
+        },
+        {
+          "questions": 24,
+          "url": "https://sorusepetim.com/sinav/SE-EA66A86EE2816A90A0DF227D2878296C/"
+        }
+      ]
+    },
+    "sources": {
+      "2024": "https://auzefcampus.com.tr/turk-dili-i-final-2024/",
+      "2020-2021": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1",
+      "2022-2023": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1",
+      "2023-2024": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1",
+      "2024-2025": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1",
+      "2025-2026": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+    },
+    "questions": [
+      {
+        "id": "final_turk_dili_01",
+        "year": "2025-2026",
+        "question": "Diller arası sözcük alışverişiyle ilgili hangi ifade doğrudur?",
+        "options": {
+          "A": "Her dil sözcüklerini yalnız kendi içinde üretir.",
+          "B": "Bir dil başka dilden sözcük aldığında dil bilgisi bütünüyle değişir.",
+          "C": "Sözcük alışverişi yalnızca yazılı diller arasında olur.",
+          "D": "Sözcük alışverişi için diller aynı aileden olmalıdır.",
+          "E": "Temas hâlindeki diller birbirinden sözcük alabilir."
+        },
+        "answer": "E",
+        "explanation": "Toplumlar arasındaki ticari, kültürel ve günlük temas sözcük alışverişini mümkün kılar. Dillerin aynı aileye ait olması gerekmez.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+      },
+      {
+        "id": "final_turk_dili_02",
+        "year": "2025-2026",
+        "question": "“Arkadaşlar, toplantı bugün ertelendi.” cümlesinde “Arkadaşlar” sözünün görevi nedir?",
+        "options": {
+          "A": "Özne",
+          "B": "Cümle dışı unsur",
+          "C": "Belirtili nesne",
+          "D": "Yer tamlayıcısı",
+          "E": "Zarf tümleci"
+        },
+        "answer": "B",
+        "explanation": "Arkadaşlar bir seslenmedir ve cümlenin temel ögelerinden biri değildir. Yüklem ertelendi, özne toplantı, zaman bildiren zarf ise bugündür.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+      },
+      {
+        "id": "final_turk_dili_03",
+        "year": "2024-2025",
+        "question": "Harezm Türkçesi ve Kıpçak Türkçesi, Türk dili tarihinin genel dönemlendirmesinde hangi dönemde incelenir?",
+        "options": {
+          "A": "Türkiye Türkçesi",
+          "B": "Osmanlı Türkçesi",
+          "C": "Eski Türkçe",
+          "D": "Orta Türkçe",
+          "E": "Ana Altayca"
+        },
+        "answer": "D",
+        "explanation": "Harezm ve Kıpçak Türkçeleri, tarihsel Türk dilinin Orta Türkçe döneminde ele alınan yazı dillerindendir. Orhon ve Eski Uygur metinleri ise Eski Türkçe başlığı altında incelenir.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+      },
+      {
+        "id": "final_turk_dili_04",
+        "year": "2023-2024",
+        "question": "Hangi sözcük Türkçenin güncel yazımına uygundur?",
+        "options": {
+          "A": "Kılavuz",
+          "B": "Klavuz",
+          "C": "Kılavüs",
+          "D": "Klavüs",
+          "E": "Kılavız"
+        },
+        "answer": "A",
+        "explanation": "Sözcüğün standart yazımı kılavuzdur. İlk hecedeki ı ünlüsü yazılır ve son hece vuz biçimindedir.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+      },
+      {
+        "id": "final_turk_dili_05",
+        "year": "2022-2023",
+        "question": "Dilin zamanla değiştiğine hangi durum örnek gösterilebilir?",
+        "options": {
+          "A": "Bir dilin hiçbir zaman yeni sözcük üretmemesi",
+          "B": "Bir dilin yalnızca yazıdan oluşması",
+          "C": "Eski metinlerdeki kimi sözcüklerin günümüzde farklı biçimde kullanılması",
+          "D": "Her toplumun aynı dilin kurallarını kullanması",
+          "E": "Tüm konuşurların her sözcüğü aynı şekilde söylemesi"
+        },
+        "answer": "C",
+        "explanation": "Eski ve yeni metinler arasında sözcük biçimleri ve anlamları değişebilir. Bu değişim, dilin toplumsal kullanım içinde yaşayan bir sistem olduğunu gösterir.",
+        "source": "https://aofpusula.com/cikmis-sorular/auzef/auzef-turk-dili-1"
+      },
+      {
+        "id": "final_turk_dili_06",
+        "year": "2024",
+        "question": "Eski Türkçedeki “til” biçiminin günümüzde “dil” olarak karşımıza çıkması hangi ses değişimini örnekler?",
+        "options": {
+          "A": "Ünlü düşmesi",
+          "B": "Ünlü daralması",
+          "C": "Ünsüz türemesi",
+          "D": "Ünsüz benzeşmesi",
+          "E": "Ünsüz ötümlüleşmesi"
+        },
+        "answer": "E",
+        "explanation": "Ötümsüz t sesi, ötümlü karşılığı d sesine dönüşmüştür. İki biçim arasında ünlü değişimi veya ünsüz eklenmesi yoktur.",
+        "source": "https://auzefcampus.com.tr/turk-dili-i-final-2024/"
+      },
+      {
+        "id": "final_turk_dili_07",
+        "year": "2024",
+        "question": "Dîvânu Lugâti’t-Türk hangi Türkçe döneminin önemli yazılı kaynaklarındandır?",
+        "options": {
+          "A": "Türkiye Türkçesi",
+          "B": "Karahanlı Türkçesi",
+          "C": "Osmanlı Türkçesi",
+          "D": "Kıpçak Türkçesi",
+          "E": "Çağatay Türkçesi"
+        },
+        "answer": "B",
+        "explanation": "Kâşgarlı Mahmud’un 11. yüzyılda yazdığı Dîvânu Lugâti’t-Türk Karahanlı dönemi eseridir. Türkçe sözcükleri örneklerle tanıtır.",
+        "source": "https://auzefcampus.com.tr/turk-dili-i-final-2024/"
+      }
+    ]
+  },
+  "ataturk": {
+    "catalog": "https://sorusepetim.com/katalog/auzef/cocuk-gelisimi-on-lisans/guz/1-sinif/ataturk-ilkeleri-ve-inkilap-tarihi-i/",
+    "sets": {
+      "2025-2026": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-9D63088AEAA2418F1E820DACCFB146AF/"
+        }
+      ],
+      "2024-2025": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-D58FBADE6A41CB4B78D16F216FA40D07/"
+        }
+      ],
+      "2023-2024": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-1CCAEE62F8B2F8A0A673F8846320433C/"
+        }
+      ],
+      "2022-2023": [
+        {
+          "questions": 20,
+          "url": "https://sorusepetim.com/sinav/SE-55E975D6E7424DFDDC6EF24A679E0A06/"
+        }
+      ]
+    },
+    "sources": {
+      "2020-2021": "https://aofpusula.com/cikmis-sorular/auzef/aiitarihi",
+      "2025-2026": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2025-2026-final",
+      "2024-2025": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2024-2025-final",
+      "2023-2024": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2023-2024-final",
+      "2022-2023": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2022-2023-final"
+    },
+    "questions": [
+      {
+        "id": "final_ataturk_01",
+        "year": "2025-2026",
+        "question": "Tarih kaynaklarında Elviye-i Selase olarak anılan üç yer hangisidir?",
+        "options": {
+          "A": "Erzurum, Erzincan, Bayburt",
+          "B": "Kars, Ardahan, Batum",
+          "C": "Trabzon, Rize, Artvin",
+          "D": "Sivas, Tokat, Amasya",
+          "E": "Musul, Kerkük, Erbil"
+        },
+        "answer": "B",
+        "explanation": "Elviye-i Selase üç sancak anlamına gelir. Bu tarihsel ad Kars, Ardahan ve Batum için kullanılır.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_ataturk_02",
+        "year": "2025-2026",
+        "question": "1921 Teşkilât-ı Esasiye Kanunu’na göre kanun koyma ve antlaşma yapma gibi yetkileri hangi organ kullanıyordu?",
+        "options": {
+          "A": "Heyet-i Temsiliye",
+          "B": "İstanbul Hükûmeti",
+          "C": "Ayan Meclisi",
+          "D": "Büyük Millet Meclisi",
+          "E": "Şûrâ-yı Devlet"
+        },
+        "answer": "D",
+        "explanation": "1921 Anayasası’nın 7. maddesi kanun yapma ve antlaşma akdi gibi temel yetkileri Büyük Millet Meclisine verir. Bu, dönemin meclis hükûmeti anlayışıyla uyumludur.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2025-2026-final"
+      },
+      {
+        "id": "final_ataturk_03",
+        "year": "2024-2025",
+        "question": "Millî Mücadele sırasında yerel direniş cemiyetlerinin tek çatı altında birleştirilmesi hangi kongrede karara bağlandı?",
+        "options": {
+          "A": "Sivas Kongresi",
+          "B": "Erzurum Kongresi",
+          "C": "Balıkesir Kongresi",
+          "D": "Alaşehir Kongresi",
+          "E": "Amasya Görüşmeleri"
+        },
+        "answer": "A",
+        "explanation": "Sivas Kongresi’nde yerel müdafaa-i hukuk örgütleri Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti çatısında birleştirildi. Bu adım direniş hareketinin ulusal ölçekte örgütlenmesini güçlendirdi.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_ataturk_04",
+        "year": "2024-2025",
+        "question": "Güney Cephesi’nde Fransa ile çatışmaları sona erdiren 1921 anlaşması hangisidir?",
+        "options": {
+          "A": "Gümrü Antlaşması",
+          "B": "Kars Antlaşması",
+          "C": "Mudanya Mütarekesi",
+          "D": "Lozan Antlaşması",
+          "E": "Ankara Anlaşması"
+        },
+        "answer": "E",
+        "explanation": "20 Ekim 1921 tarihli Ankara Anlaşması TBMM Hükûmeti ile Fransa arasında imzalandı. Güney Cephesi’nde çatışmaların sona ermesini sağladı.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2024-2025-final"
+      },
+      {
+        "id": "final_ataturk_05",
+        "year": "2023-2024",
+        "question": "Balta Limanı Ticaret Antlaşması, 1838’de Osmanlı Devleti ile hangi ülke arasında imzalandı?",
+        "options": {
+          "A": "Fransa",
+          "B": "Rusya",
+          "C": "Britanya",
+          "D": "Avusturya",
+          "E": "İtalya"
+        },
+        "answer": "C",
+        "explanation": "Balta Limanı Antlaşması Britanya ile imzalandı. Anlaşma Britanyalı tüccarların Osmanlı pazarına erişimini genişletti.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_ataturk_06",
+        "year": "2023-2024",
+        "question": "Osmanlı Devleti’nde Nizam-ı Cedid adıyla anılan reformlar hangi padişah döneminde başlatıldı?",
+        "options": {
+          "A": "III. Selim",
+          "B": "II. Abdülhamid",
+          "C": "V. Mehmed",
+          "D": "I. Abdülmecid",
+          "E": "V. Murad"
+        },
+        "answer": "A",
+        "explanation": "III. Selim’in Nizam-ı Cedid programı başta askerî teşkilat olmak üzere çeşitli alanlarda yenilikler içeriyordu. II. Mahmut’un reformları daha sonraki bir döneme aittir.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2023-2024-final"
+      },
+      {
+        "id": "final_ataturk_07",
+        "year": "2022-2023",
+        "question": "Erzurum Kongresi’nin bölgesel nitelikte toplandığını gösteren temel unsur hangisidir?",
+        "options": {
+          "A": "Bütün Anadolu’dan seçilmiş üyelerle açılması",
+          "B": "Bir yabancı devlet tarafından düzenlenmesi",
+          "C": "Katılımcıların ağırlıkla doğu vilayetlerinin temsilcileri olması",
+          "D": "TBMM açıldıktan sonra yapılması",
+          "E": "Sadece İstanbul’daki cemiyetlerin çağrılması"
+        },
+        "answer": "C",
+        "explanation": "Erzurum Kongresi doğu illerini temsil eden delegelerle toplandı. Katılımı bölgeseldi, aldığı kararlar ise bütün ülkeyi ilgilendiren hükümler de içeriyordu.",
+        "source": "https://universiten.com/cikmis-sorular/auzef/ataturk-ilkeleri-ve-inkilap-tarihi-1/sinav/2022-2023-final"
+      }
+    ]
+  }
+}
